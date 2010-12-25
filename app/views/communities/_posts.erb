@@ -1,0 +1,16 @@
+<ul>
+
+  <% posts.each do |post|  %>
+
+    <li>
+      <b>  <%=post.title %> </b><br/>
+      <i>  <%=raw post.description.slice(0,300) %> </i>
+      <br/>
+      Date: <b>  <%=  post.updated_at.strftime( '%Y-%m-%d %H:%M') %> </b>
+      <br/>
+    <%= link_to 'More info', community_post_path(community, post) %>
+      <hr/>
+    </li>
+
+  <%end%>
+</ul>

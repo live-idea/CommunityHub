@@ -1,0 +1,23 @@
+<p>
+  <b>User:</b>
+  <%= @post.user.user_profile.nickname %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= raw  @post.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_community_post_path(@community, @post) %> |
+<%= link_to 'Back', community_posts_path %>
+
+
+<div id="comments_id">
+ <%=render :partial=>"posts/comments", :locals=>{:commentable => @post, :comment => @comment}%>
+</div>

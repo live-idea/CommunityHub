@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+User_one:
+  is_communityadmin: false
+  is_superadmin: false
+
+User_two:
+  is_communityadmin: false
+  is_superadmin: false

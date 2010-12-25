@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+Community_one:
+  name: MyString
+  activity: MyText
+  direction: MyString
+  description: MyString
+  slogan: MyString
+
+Community_two:
+  name: MyString
+  activity: MyText
+  direction: MyString
+  description: MyString
+  slogan: MyString

@@ -1,0 +1,45 @@
+<p>
+  <b>Name:</b>
+  <%= @event.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= raw  @event.description %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @event.date %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @event.place %>
+</p>
+
+<p>
+  <b>Place long:</b>
+  <%= @event.place_long %>
+</p>
+
+<p>
+  <b>Place latt:</b>
+  <%= @event.place_latt %>
+</p>
+
+<div class="imageMapLocation">
+<center>
+  <img src="http://maps.google.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=14&size=512x512&maptype=roadmap
+&markers=color:blue|label:S|40.702147,-74.015794&markers=color:green|label:G|40.711614,-74.012318
+&markers=color:red|color:red|label:C|40.718217,-73.998284&sensor=false" />
+</center>
+</div>
+
+<%= link_to 'Edit', edit_community_event_path(@community, @event) %> |
+<%= link_to 'Back', community_events_path %>
+
+
+<div id="comments_id">
+ <%=render :partial=>"events/comments", :locals=>{:commentable => @event, :comment => @comment}%>
+</div>

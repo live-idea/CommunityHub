@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CommunityHub</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
+  <head>
+    <title>CommunityHub</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" %>
 
-<%= yield %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
 
-</body>
+    
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+      </div>
+      <%=render :partial=>"partials/menu"%>
+
+      <% p flash[:notice] %>
+
+        <p class="notice"><%= flash[:notice] %></p>
+     
+      <%if flash[:alert]%>
+        <p class="alert"><%= alert %></p>
+      <%end%>
+
+        
+
+      <%= yield %>
+
+   
+
+    
+
+      <hr/>
+      <div id="footer">
+
+      </div>
+    </div>
+  </body>
 </html>

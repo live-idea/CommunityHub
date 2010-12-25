@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+CommunityUser_one:
+  community_id: 1
+  user_id: 1
+
+CommunityUser_two:
+  community_id: 1
+  user_id: 1

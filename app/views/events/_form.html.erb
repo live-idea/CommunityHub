@@ -1,0 +1,41 @@
+ <% semantic_form_for [@community, @event] do |form| %>
+    <% form.inputs do %>
+      <%= form.input :name %>
+      <%= form.input :description %>
+      <%= form.input :date %>
+      <%= form.input :place %>
+      <%= form.input :place_long %>
+      <%= form.input :place_latt %>
+
+
+    <% end %>
+    <% form.buttons do %>
+      <%= form.commit_button %>
+    <% end %>
+  <% end %>
+
+
+<script type="text/javascript">
+function initialize() {
+  var myLatlng = new google.maps.LatLng(-34.397, 150.644);
+  var myOptions = {
+    zoom: 8,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+}
+
+function loadScript() {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAAwD_5OhXhvGUontagrgRKxTJQa0g3IQ9GZqIMmInSLzwtGDKaBS3c2XQ_SS34xmGHosD_35QBuVlyw";
+
+  debugger;
+  document.body.appendChild(script);
+}
+
+window.onload = loadScript;
+
+</script>
+ 

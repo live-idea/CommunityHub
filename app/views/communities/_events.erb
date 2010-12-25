@@ -1,0 +1,16 @@
+<ul>
+
+  <% events.each do |event|  %>
+
+    <li>
+      <b>  <%=raw event.name %> </b><br/>
+      <i>  <%=raw event.description %> </i>
+      <br/>
+      Date: <b>  <%=  event.date.strftime( '%Y-%m-%d %H:%M') %> </b>
+      <br/>
+    <%= link_to 'More info', community_event_path(community, event) %>
+      <hr/>
+    </li>
+
+  <%end%>
+</ul>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @announcement.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @announcement.description %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @announcement.date %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @announcement.place %>
+</p>
+
+<p>
+  <b>Place long:</b>
+  <%= @announcement.place_long %>
+</p>
+
+<p>
+  <b>Place latt:</b>
+  <%= @announcement.place_latt %>
+</p>
+
+
+<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
+<%= link_to 'Back', announcements_path %>

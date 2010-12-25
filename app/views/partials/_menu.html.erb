@@ -1,0 +1,19 @@
+<div id="sidebarmenu">
+  <%  if current_user %>
+   <div style="float: right;" >
+  <%= link_to "Sign out", destroy_user_session_path %>
+    </div>
+    <div style="float: left;" >
+  <%= link_to "My communities", my_communities_path %>
+
+  <%= link_to "All communities", communities_path %>
+
+  <%= link_to "Profile", edit_profile_path %>   
+
+  <% else %>
+    <%= link_to "Login", new_user_session_path %> |
+  <%end%>
+      </div>
+  <div style=" clear: both;">
+  </div>
+</div>

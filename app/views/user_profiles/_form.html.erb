@@ -1,0 +1,15 @@
+ <% semantic_form_for @user_profile do |form| %>
+    <% form.inputs do %>
+      <%= form.input :nickname %>
+      <%= form.input :description %>
+      <%= form.input :birthdate, :as => :string %>
+      <%= form.input :phone %>
+      <%= form.input :website %>
+    <% end %>
+    <% form.buttons do %>
+      <%= form.commit_button %>
+    <% end %>
+  <% end %>
+
+
+

@@ -1,0 +1,67 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+
+<div class="header1">
+  I'm the member of communities:
+</div>
+
+<% if @membercommunities.count > 0 %>
+<ul>
+  <% @membercommunities.each do |community| %>
+    <li>
+      <%= image_tag community.avatar.url(:thumb) %>
+      <h4>
+        <%= link_to community.name, community_path(community)%>
+      </h4>
+      Created:  <%=community.created_at.strftime( '%Y-%m-%d %H:%M') %> | 
+      Founder:  <%=community.creator.user_profile.nickname %>
+    <hr/>
+    </li>
+  <% end %>
+</ul>
+<%else%>
+<div class="message1">
+    I'm not a member of any comunity yet
+</div>
+<%end%>
+
+<hr/>
+
+
+<div class="header1">
+  I have the communities:
+</div>
+
+
+
+<% if @owncommunities.count > 0 %>
+<ul>
+  <% @owncommunities.each do |community| %>
+    <li> <%= image_tag community.avatar.url(:thumb) %>
+      <h4>
+        <%= link_to community.name, community_path(community) %>
+      </h4>
+
+      Created:  <%=community.created_at.strftime( '%Y-%m-%d %H:%M') %> |
+      Founder:  <%=community.creator.user_profile.nickname %>
+      <hr/>
+    </li>
+  <% end %>
+</ul>
+<%else%>
+<div class="message1">
+    <i>I haven't  any comunity yet</i>
+</div>
+<%end%>
+
+<div class="buttonCreate">
+    <%= link_to 'New Community', new_community_path %>
+</div>
+<div class="clear">
+</div>
+
+
+

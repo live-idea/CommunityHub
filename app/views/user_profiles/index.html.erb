@@ -1,0 +1,33 @@
+<h1>User profiles</h1>
+
+<table>
+  <tr>
+    <th>Nickname</th>
+    <th>Description</th>
+    <th>Birthdate</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Website</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_profiles.each do |user_profile| %>
+  <tr>
+    <td><%= user_profile.nickname %></td>
+    <td><%= user_profile.description %></td>
+    <td><%= user_profile.birthdate %></td>
+    <td><%= user_profile.email %></td>
+    <td><%= user_profile.phone %></td>
+    <td><%= user_profile.website %></td>
+    <td><%= link_to 'Show', user_profile %></td>
+    <td><%= link_to 'Edit', edit_profile_path(user_profile) %></td>
+    <td><%= link_to 'Destroy', user_profile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User profile', new_profile_path %>

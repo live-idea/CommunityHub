@@ -1,4 +1,61 @@
 CommunityHub::Application.routes.draw do
+  devise_for :users
+
+resources :comments
+
+resources :events do
+    resources :comments
+end
+
+resources :posts do
+    resources :comments
+end
+
+resource :profile, :controller => "user_profiles"
+  
+resources :user_profiles
+
+resources :communities do
+       #subresources
+       resources :events
+       resources :posts
+
+       #collections
+       collection do
+        get 'my'
+       end
+
+
+       #Join leave community
+       member do
+        post 'join'        
+       end     
+      
+       member do
+         post 'leave'
+       end
+
+       #events
+       member do
+         get 'get_events'
+       end
+
+       #posts
+       member do
+         get 'get_posts'
+       end
+
+       member do
+         post 'submit_post'
+       end
+
+       member do
+         post 'delete_post'
+       end
+    
+ end
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +105,7 @@ CommunityHub::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 
