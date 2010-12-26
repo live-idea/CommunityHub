@@ -17,6 +17,7 @@ class EventsController < ApplicationController
     #@community = Community.find(params[:community_id])
     @event = Event.find(params[:id])
     @community = Community.find(params[:community_id])
+    @comment = Comment.new
    
     respond_to do |format|
       format.html # show.html.erb

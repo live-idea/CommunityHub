@@ -9,11 +9,13 @@
   <%= link_to "All communities", communities_path %>
 
   <%= link_to "Profile", edit_profile_path %>   
-
+ </div>
   <% else %>
-    <%= link_to "Login", new_user_session_path %> |
+       <div style="float: right;">
+    <%= link_to "Login", new_user_session_path %>
+        </div>
   <%end%>
-      </div>
+      
   <div style=" clear: both;">
   </div>
 </div>
